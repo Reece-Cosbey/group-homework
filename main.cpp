@@ -17,35 +17,6 @@
 
 using namespace std;
 
-int main() {
-  string fileName;
-  Steganography mySteg;
-  string newFileName;
-  string operation;
-  string textFile;
-
-  cout << "Would you like to endcode or decode? ";
-  cin >> operation;
-  cout << endl;
-
-  if(operation == "encode"){
-     cout << "Please enter PPM file name: ";
-     cin >> fileName;
-     cout << endl;
-
-     mySteg.readCipherText(fileName);
-
-  }
-
-   if(operation == "decode"){
-     cout << "Please enter PPM file name: ";
-     cin >> fileName;
-     cout << endl;
-
-     mySteg.readCipherText(fileName);
-
-  }
-
-  return 0;
+int main(){
+  
 }
-
