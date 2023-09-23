@@ -25,23 +25,43 @@ void Steganography::readCipherText(string fileName){
   myFile.open(fileName);
   getline(myFile, magicNumber);
   myFile >> height;
-  getline(myFile, magicNumber);
-  myFile >> height;
   myFile >> width;
   myFile >> maxColor;
   cout << "magic number: " << magicNumber << endl;
   cout << "height: " << height << endl;
   cout << "width: " << width << endl;
   cout << "max color: " << maxColor << endl;
+  int lastNum = (height * width) * 3;
+  colorData.resize(lastNum);
+  cout << colorData.size() << endl;
+  for(int i = 0; i < colorData.size(); i++){
+     myFile >> colorData[i];
+  }
 
   myFile.close();
+  for(int i = 0; i < colorData.size(); i++){
+    cout << colorData[i] << endl;
+  }
+  cout << colorData[4];
+  cout << colorData.size() << "sup" << endl;;
+
   //hello there
+  int num1 = 4;
+  int num2 = 15;
 }
 
 void Steganography::printCipherText(string fileName){}
 
-void Steganography::cleanImage(){}
+void Steganography::cleanImage(){
+  //before this, find out how to convert numbers to binary
+   for(int i = 0; i < colorData.size(); i++){
+    if(colorData[i] % 2 == 1){
+      colorData[i] = colorData[i] - 1;
+    }
+  }
+}
 
 void Steganography::encipher(){}
 
 void Steganography::decipher(){}
+
