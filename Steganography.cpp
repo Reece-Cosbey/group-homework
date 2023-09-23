@@ -46,6 +46,7 @@ void Steganography::readCipherText(string fileName){
   cout << colorData.size() << "sup" << endl;;
 
   //hello there
+  //this is a test
   int num1 = 4;
   int num2 = 15;
 }
