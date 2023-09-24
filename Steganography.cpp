@@ -14,12 +14,53 @@
 #include<vector>
 using namespace std;
 
+
+/**
+ * helper to get n bit so we can encode it
+ *
+ * @param char cipherChar the char we are looking at
+ * @param int n the place
+ * @pre numbers converted to binary
+ * @return int bit
+ * @post nth bit found
+ * 
+ */
 int getNthBit(char cipherChar, int n){}
 
+
+/**
+ * reads image from file
+ *
+ * @param string fileName valid file name
+ * @pre a valid filename is entered
+ * @return void 
+ * @post variables are set
+ * 
+ */
 void Steganography::readImage(string fileName){}
 
+
+/**
+ * prints image to file
+ *
+ * @param string fileName valid filename
+ * @pre message has been encoded
+ * @return void 
+ * @post image read to file
+ * 
+ */
 void Steganography::printImage(string fileName){}
 
+
+/**
+ * reads in from file
+ *
+ * @param string fileName valid filename
+ * @pre valid file is entered
+ * @return void 
+ * @post variables are set
+ * 
+ */
 void Steganography::readCipherText(string fileName){
   ifstream myFile;
   myFile.open(fileName);
@@ -39,19 +80,29 @@ void Steganography::readCipherText(string fileName){
   }
 
   myFile.close();
-  for(int i = 0; i < colorData.size(); i++){
-    cout << colorData[i] << endl;
-  }
-  cout << colorData[4];
-  cout << colorData.size() << "sup" << endl;;
-
-  //hello there
-  int num1 = 4;
-  int num2 = 15;
 }
 
+
+/**
+ * prints ciphertext to file
+ *
+ * @param string fileName valid file
+ * @pre image has been decoded
+ * @return void 
+ * @post ciphertext of the image has been read to the file
+ * 
+ */
 void Steganography::printCipherText(string fileName){}
 
+
+/**
+ * zeroes out the least significant bit
+ *
+ * @pre valid file is entered
+ * @return void 
+ * @post the least significant bit is zeroed out
+ * 
+ */
 void Steganography::cleanImage(){
   //before this, find out how to convert numbers to binary
    for(int i = 0; i < colorData.size(); i++){
@@ -61,7 +112,25 @@ void Steganography::cleanImage(){
   }
 }
 
+
+/**
+ * enciphers cipher text into an image
+ *
+ * @pre valid file is used
+ * @return void 
+ * @post data is enciphered
+ * 
+ */
 void Steganography::encipher(){}
 
+
+/**
+ * decodes a image to get the ciphertext
+ *
+ * @pre valid file is used
+ * @return void 
+ * @post data has been decoded
+ * 
+ */
 void Steganography::decipher(){}
 
