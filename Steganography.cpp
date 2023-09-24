@@ -25,7 +25,47 @@ using namespace std;
  * @post nth bit found
  * 
  */
-int getNthBit(char cipherChar, int n){}
+int Steganography::getNthBit(char cipherChar, int n){}
+
+int Steganography::binary(int num){
+  int binaryNumber[10];
+  int actualNum = num;
+  int i = 0;
+  int result = 0;
+  string bin;
+
+  if(actualNum == 0){
+    binaryNumber[0] = 0;
+  }
+  while(num > 0){
+    binaryNumber[i] = num % 2;
+    num = num / 2;
+    i++;
+  }
+  if(actualNum > 0){
+    for(int a = i - 1; a >= 0; a--){
+      bin.append(to_string(binaryNumber[a]));
+    }
+  }
+  if(actualNum == 0){
+    bin.append(to_string(binaryNumber[0]));
+  }
+  result = stoi(bin);
+  return result;
+}
+
+int Steganography::decimal(int num){
+  string toDecimal = to_string(num);
+  int result = 0;
+  int actualNum = num;
+  if(actualNum == 0){
+    result = actualNum;
+  }
+  if(actualNum > 0){
+    
+  }
+  return result;
+}
 
 
 /**
@@ -104,8 +144,10 @@ void Steganography::printCipherText(string fileName){}
  * 
  */
 void Steganography::cleanImage(){
-  //before this, find out how to convert numbers to binary
-   for(int i = 0; i < colorData.size(); i++){
+  for(int i = 0; i < colorData.size(); i++){
+    colorData[i] = binary(colorData[i]);
+  }
+  for(int i = 0; i < colorData.size(); i++){
     if(colorData[i] % 2 == 1){
       colorData[i] = colorData[i] - 1;
     }
